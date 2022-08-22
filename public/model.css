@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', '微軟正黑體';
+    font-size: 20px;
+}
+body{
+    background-image: url(https://picsum.photos/id/24/1980/1080);
+    
+}
+.container{
+    background-color:rgba(250,235,215,0.85);
+    border-radius: 50px
+}
+
+li{
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+p{
+    font-size: 30px;
+}
+span{
+    font-size: 15px;
+    color: rgb(56, 55, 55);
+}
+
