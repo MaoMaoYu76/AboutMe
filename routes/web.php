@@ -15,7 +15,7 @@ use App\Http\Controllers\MeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('mes.index');
 });
 
 Route::get('/Mes',[MeController::class,'index'])->name('mes.index');
