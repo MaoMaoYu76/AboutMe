@@ -2,143 +2,257 @@
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="model.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <style>
-    * {
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', '微軟正黑體';
-    font-size: 20px;
-}
-body{
-    background-image: url(https://picsum.photos/id/24/1980/1080);
-    
-}
-.container{
-    background-color:rgba(250,235,215,0.85);
-    border-radius: 50px
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', '微軟正黑體';
+            font-size: 20px;
+        }
 
-li{
-    width: 120px;
-    height: 120px;
-    text-align: center;
-}
-p{
-    font-size: 30px;
-}
-span{
-    font-size: 15px;
-    color: rgb(56, 55, 55);
-}
+        body {
+            background-image: url(https://picsum.photos/id/24/1980/1080);
 
-  </style>
+        }
+
+        ul {
+            background-color: rgba(250, 250, 250, 0.9);
+
+        }
+
+        .container {
+            background-color: rgba(250, 235, 215, 0.85);
+            border-radius: 50px;
+        }
+
+        li {
+            width: 120px;
+            height: 120px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 30px;
+        }
+
+        span {
+            font-size: 15px;
+            color: rgb(56, 55, 55);
+        }
+        .space{
+            padding: 100px;
+        }
+        b{
+            font-size:25px;
+        }
+    </style>
 </head>
 
 <body>
-<ul class="nav justify-content-center py-3">
-  <li  class="nav-item">AboutMe
-    <a class="nav-link"  href="{{route('mes.index')}}" >
-    <img id="myImage" onmouseover="changeImage()" onmouseout="changeImage()" src="url(https://cdn-icons-png.flaticon.com/512/4185/4185136.png')" class="img-fluid"></a>
-<script>
-function changeImage() {
-  var image = document.getElementById('myImage');
-  if (image.src.match("4185224")) {
-    image.src = "url(https://cdn-icons-png.flaticon.com/512/4185/4185136.png)";
-  } else {
-    image.src = {url(https://cdn-icons-png.flaticon.com/512/4185/4185224.png)";
-  }
-}
-</script>
-  </li>
-  <li class="nav-item">MyProject
-  <a class="nav-link"  href="{{route('mes.share')}}" >
-  <img id="myImage1" onmouseover="changeImage1()" onmouseout="changeImage1()" src="{{url('storage/images/coaching_off.png')}}" class="img-fluid"></a>
-    <script>
-function changeImage1() {
-  var image = document.getElementById('myImage1');
-  if (image.src.match("_on")) {
-    image.src = "{{url('storage/images/coaching_off.png')}}";
-  } else {
-    image.src = "{{url('storage/images/coaching_on.png')}}";
-  }
-}
-</script>
-  </li>
-  <li class="nav-item">Plan
-    <a class="nav-link" href="{{route('mes.arrange')}}">
-    <img id="myImage2" onmouseover="changeImage2()" onmouseout="changeImage2()" src="{{url('storage/images/schedule_off.png')}}" class="img-fluid"></a>
-    <script>
-function changeImage2() {
-  var image = document.getElementById('myImage2');
-  if (image.src.match("_on")) {
-    image.src = "{{url('storage/images/schedule_off.png')}}";
-  } else {
-    image.src = "{{url('storage/images/schedule_on.png')}}";
-  }
-}
-</script>
-  </li>
-  <li class="nav-item">IdealJob
-    <a class="nav-link" href="{{route('mes.goal')}}">
-      <img id="myImage3" onmouseover="changeImage3()" onmouseout="changeImage3()" src="{{url('storage/images/goal_off.png')}}" class="img-fluid"></a>
-    <script>
-function changeImage3() {
-  var image = document.getElementById('myImage3');
-  if (image.src.match("_on")) {
-    image.src = "{{url('storage/images/goal_off.png')}}";
-  } else {
-    image.src = "{{url('storage/images/goal_on.png')}}";
-  }
-}
-</script>
-  </li>
-  <li class="nav-item">Struggle
-    <a class="nav-link" href="{{route('mes.trouble')}}">
-    <img id="myImage4" onmouseover="changeImage4()" onmouseout="changeImage4()" src="{{url('storage/images/brainstorm_off.png')}}" class="img-fluid"></a>
-    <script>
-function changeImage4() {
-  var image = document.getElementById('myImage4');
-  if (image.src.match("_on")) {
-    image.src = "{{url('storage/images/brainstorm_off.png')}}";
-  } else {
-    image.src = "{{url('storage/images/brainstorm_on.png')}}";
-  }
-}
-</script>
-  </li>
-  <li class="nav-item">Learned
-    <a class="nav-link" href="{{route('mes.gains')}}">
-    <img id="myImage5" onmouseover="changeImage5()" onmouseout="changeImage5()" src="{{url('storage/images/motivation_off.png')}}" class="img-fluid"></a>
-    <script>
-function changeImage5() {
-  var image = document.getElementById('myImage5');
-  if (image.src.match("_on")) {
-    image.src = "{{url('storage/images/motivation_off.png')}}";
-  } else {
-    image.src = "{{url('storage/images/motivation_on.png')}}";
-  }
-}
-</script>
-  </li>
-  <li class="nav-item">MyRequest
-    <a class="nav-link" href="{{route('mes.say')}}">
-      <img id="myImage6" onmouseover="changeImage6()" onmouseout="changeImage6()" src="{{url('storage/images/megaphone_off.png')}}" class="img-fluid"></a>
-    <script>
-function changeImage6() {
-  var image = document.getElementById('myImage6');
-  if (image.src.match("_on")) {
-    image.src = "{{url('storage/images/megaphone_off.png')}}";
-  } else {
-    image.src = "{{url('storage/images/megaphone_on.png')}}";
-  }
-}
-</script>
-  </li>
-</ul>
+    <ul class="nav fixed-top justify-content-center py-3">
+        <li class="nav-item">AboutMe
+            <a class="nav-link" href="#c1">
+                <img id="myImage" onmouseover="changeImage()" onmouseout="changeImage()"
+                    src="https://cdn-icons-png.flaticon.com/512/4185/4185136.png" class="img-fluid"></a>
+            <script>
+                function changeImage() {
+                    var image = document.getElementById('myImage');
+                    if (image.src.match("4185224")) {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185136.png";
+                    } else {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185224.png";
+                    }
+                }
+            </script>
+        </li>
+        <li class="nav-item">MyProject
+            <a class="nav-link" href="#c2">
+                <img id="myImage1" onmouseover="changeImage1()" onmouseout="changeImage1()"
+                    src="https://cdn-icons-png.flaticon.com/512/4185/4185179.png" class="img-fluid"></a>
+            <script>
+                function changeImage1() {
+                    var image = document.getElementById('myImage1');
+                    if (image.src.match("4185377")) {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185179.png";
+                    } else {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185377.png";
+                    }
+                }
+            </script>
+        </li>
+        <li class="nav-item">Plan
+            <a class="nav-link" href="#c3">
+                <img id="myImage2" onmouseover="changeImage2()" onmouseout="changeImage2()"
+                    src="https://cdn-icons-png.flaticon.com/512/4185/4185205.png" class="img-fluid"></a>
+            <script>
+                function changeImage2() {
+                    var image = document.getElementById('myImage2');
+                    if (image.src.match("4185424")) {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185205.png";
+                    } else {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185424.png";
+                    }
+                }
+            </script>
+        </li>
+        <li class="nav-item">IdealJob
+            <a class="nav-link" href="#c4">
+                <img id="myImage3" onmouseover="changeImage3()" onmouseout="changeImage3()"
+                    src="https://cdn-icons-png.flaticon.com/512/4185/4185141.png" class="img-fluid"></a>
+            <script>
+                function changeImage3() {
+                    var image = document.getElementById('myImage3');
+                    if (image.src.match("4185271")) {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185141.png";
+                    } else {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185271.png";
+                    }
+                }
+            </script>
+        </li>
+        <li class="nav-item">Struggle
+            <a class="nav-link" href="#c5">
+                <img id="myImage4" onmouseover="changeImage4()" onmouseout="changeImage4()"
+                    src="https://cdn-icons-png.flaticon.com/512/4185/4185209.png" class="img-fluid"></a>
+            <script>
+                function changeImage4() {
+                    var image = document.getElementById('myImage4');
+                    if (image.src.match("4185434")) {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185209.png";
+                    } else {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185434.png";
+                    }
+                }
+            </script>
+        </li>
+        <li class="nav-item">Learned
+            <a class="nav-link" href="#c6">
+                <img id="myImage5" onmouseover="changeImage5()" onmouseout="changeImage5()"
+                    src="https://cdn-icons-png.flaticon.com/512/4185/4185138.png" class="img-fluid"></a>
+            <script>
+                function changeImage5() {
+                    var image = document.getElementById('myImage5');
+                    if (image.src.match("4185239")) {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185138.png";
+                    } else {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185239.png";
+                    }
+                }
+            </script>
+        </li>
+        <li class="nav-item">MyRequest
+            <a class="nav-link" href="#c7">
+                <img id="myImage6" onmouseover="changeImage6()" onmouseout="changeImage6()"
+                    src="https://cdn-icons-png.flaticon.com/512/4185/4185166.png" class="img-fluid"></a>
+            <script>
+                function changeImage6() {
+                    var image = document.getElementById('myImage6');
+                    if (image.src.match("4185348")) {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185166.png";
+                    } else {
+                        image.src = "https://cdn-icons-png.flaticon.com/512/4185/4185348.png";
+                    }
+                }
+            </script>
+        </li>
+    </ul>
+    <br id="c1"><br><br><br><br><br><br>
+    <div class="container px-5 py-3">
+        <br><b>兩百字內的個人簡介</b><br>
+        <div class="row">
+            <div class="col-6 py-2">我是陳熹，已而立之年。<br><br>本人中文系畢業後，作為安親老師已有十年的資歷，小孩越來越少，特殊兒越來越多，工作內容比剛入職那年還催人瘋狂。</div>
+            <div class="col-5 py-2">
+                <figure class="figure">
+                    <img class="img-fluid"
+                        src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.6435-9/49310508_773670032966953_4619068873935683584_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=c1S66MaI5eEAX_2zZ24&_nc_ht=scontent-tpe1-1.xx&oh=00_AT9O_1TuHOTWPwRz1i7Z7YUjfibs7S4n7ua_AMQWrPzXJw&oe=632675B6">
+                    <figcaption class="figure-caption text-end">取自臉書「幼教老師の日常」</figcaption>
+                </figure>
+            </div>
+            <div class="col-4 py-2"><img class="img-fluid"
+                    src="https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/296547962_1733334093667204_7035710587432152638_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=B1Cwm3XFxwoAX-nyX7m&_nc_ht=scontent-tpe1-1.xx&oh=00_AT9LazdLu1FCr0SLL_Zj6WhjCQj_c-0zdxixMmVw_Ii1GA&oe=630A691F">
+            </div>
+            <div class="col-7 py-2">
+                從業期間甚至用了四個月的周末假期考取課輔證照，為我帶來的仍舊是可憐的薪水。<br><br>打開104這樣的待遇卻還「您已贏過88%的安親老師」，看到當下真的笑出來。<br><br><br>──每天跟小朋友戰鬥完狼狽回到家，我有一種「再不做些什麼就是等死的感覺」。
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="space" id="c2"></div>
+    <div class="container px-5 py-4">
+        <br><b>為了成為軟體工程師，曾做過什麼努力？若有具體專案作品請分享給我們。</b><br>
+        <pre>很感謝彭彭老師的影片讓我從前端入門。3月自學到8月的時候，我開始大著膽子用　<a class="btn btn-outline-success" href="https://radiant-wildwood-16054.herokuapp.com/" target="iframe">BLOG專案</a>　去投投看履歷。
+        
+海量的投放，只迎來了5%的面試機會，數字真切地反映了自己硬實力、即戰力嚴重不足。<span>※這邊Heroku會跑得有點點久，需要稍微耐心等待一下下唷！</span></pre>
+
+        <iframe name="iframe" width="100%" height="600px" title="Iframe Example"></iframe>
+    </div>
+    <br>
+    <div class="space" id="c3"></div>
+    <div class="container px-5 py-3">
+        <div class="row">
+            <div class="col-8 py-2">
+                <iframe src="https://calendar.google.com/calendar/embed?src=dolfia1019%40gmail.com&ctz=Asia%2FTaipei"
+                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+            <div class="col-4 py-2">
+                <br><b>如果參與這個計畫，會怎麼安排學習時間？</b><br>
+                <br>這是我的行事曆，一片空白，代表為WEHELP的課程空出所有時間。<br><br>
+                我只是一個平凡人，雖不能像Jennie一樣超標完成，但我可以付出擁有的全部。<br><br>
+                一天八小時也好，十小時也好，十二小時也好，會戒慎地跟隨著課程前進，完成每一階段的任務。</div>
+        </div>
+    </div>
+    <div class="space" id="c4"></div>
+    <div  class="container px-5 py-3">
+        <b>是否有想要加入的軟體公司？為什麼想加入該公司？</b><br>
+                由於對業界的情況沒有任何了解，我甚至對工作型態的認識也不足，所以，我想只要薪水能夠比轉職以前多，能長遠的走下去的都好。
+    </div>
+    <br><br><br><br><br>
+    <div class="space" id="c5"></div>
+    <div class="container px-5 py-3">
+        <br><b>請描述一件你曾經碰到最困難的事情，如何克服？</b><br>
+        我無法舉出一個精彩的實例，多數的風險、狀況都是可預期的，越是不能預料的考驗通常都人事易盡，天命難違，因此對我而言困難更像「過程／時期」。<br>──就像現在，無收入，且有很大概率會需要再延伸半年以上，看著荷包消漸漸消瘦自己又不能很好的有所成，有時候會感到害怕。<br><br>
+        怎麼克服？<br><br>
+        行動是我最好的解藥。<br>
+        還能行動就代表還有機會撥快時間的腳步，不管是查詢、訪問、請教、實作......再碼幾個字、再丟幾封履歷、再寫點作業，我渴望盡快迎接黎明。
+    </div>
+    <br>
+    <div class="space" id="c6"></div>
+    <div id="c6" class="container px-5 py-3">
+        <br><b>關於這份申請網頁，請分享一個你開發時的技術心得。</b><br>
+        只會一些些css的我，為了將導覽列的圖示做出顏色變化，花了兩天。<br><br>
+
+        <b>想法一：把圖示改成css背景圖用hover控制</b><br>
+        結果：圖片沒有辦法好好待在li裡，失控的亂跑，甚至不見。<br><br>
+        <b>想法二：把圖示疊在同一個區域，用opacity控制。</b><br>
+        結果：光是要兩張png堆疊在同一個區域就摸索一陣，而position設定了absolute之後根本是一場災難的開始。<br><br>
+        <b>想法三：用mask-image。</b><br>
+        結果：好像沒辦法指定顏色和區域呢，看來css是不行了，得找找JS。<br><br>
+
+        最後在狂亂的Google之下，從關鍵字hover javascript中，找到了onmouseover，就此打開新世界大門，順利得到W3School的範例。<br><br>
+        這個煩惱的過程很有趣，其實我也在想，導覽列我用了七個changeImage的函式，那些需要複製貼上的script是不是也有更好的function寫法可以代替呢？真希望我也能寫出來。<br>
+
+    </div>
+    <br>
+    <div class="space" id="c7"></div>
+    <div  class="container px-5 py-3">
+        <br><b>其他想要對我們說的事情？</b><br>
+        說來慚愧，我有個不情之請。<br>
+        就在昨天(8/22)，面試的公司通知上班，本來是很高興的事情，可是我和家人、親近的朋友聊了很久。<br><br>
+        <p>我發現還是好想上WeHelp的課。</p>
+        <br>可是我沒有把握自己足夠幸運獲得您們的青睞，所以捏著Offer很徬徨，我必須在8/25當天給公司回覆，如果您們願意撥冗，我由衷地期盼能早日收到WeHelp的回覆。
+    </div>
+    <div class="space"></div><br><br>
+    <br>
+</body>
